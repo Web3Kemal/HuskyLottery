@@ -22,7 +22,7 @@ const Rules = () => {
         Wait for the random winner pick everyday at 1 PM UTC!
       </div>
       <div className={style.rule}>
-        For the winner there is a 5% tax that will be used for marketing!
+        For the winner there is a 5% tax that will be used for buyback!
       </div>
       <div className={style.rule}>
         To play the game if you are on mobile, you need to open the website from the internal browser of MetaMask, then you will be able to connect the wallet. Remember to be on BSC chain to connect!
