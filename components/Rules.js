@@ -27,9 +27,13 @@ const Rules = () => {
       <div className={style.rule}>
         To play the game if you are on mobile, you need to open the website from the internal browser of MetaMask, then you will be able to connect the wallet. Remember to be on BSC chain to connect!
       </div>
-      {/* <div className={style.rule}>
+      
+      <div className={style.rule}>
         CA: <button onClick={copyToClipboard}>0xb01d852Ad6F84a7E2065aFEC5D0e801DE0bFa0B9</button>
-      </div> */}
+      </div>
+      <div className={style.rule}>
+        Made with 💙 by <a href="https://twitter.com/Web3Kemal" target="_blank" rel="noopener noreferrer">@Web3Kemal</a>
+      </div>
     </div>
   );
 }
