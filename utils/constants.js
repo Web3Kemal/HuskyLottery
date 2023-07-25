@@ -192,7 +192,7 @@ export const lotteryAbi = [
       "stateMutability": "view",
       "type": "function"
     }
-  ];
+];
 
 export const LotteryAddress = "0xb01d852Ad6F84a7E2065aFEC5D0e801DE0bFa0B9";
 
