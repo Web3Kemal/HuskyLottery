@@ -32,7 +32,7 @@ const Rules = () => {
         CA: <button onClick={copyToClipboard}>0xb01d852Ad6F84a7E2065aFEC5D0e801DE0bFa0B9</button>
       </div>
       <div className={style.rule}>
-        Made with 💙 by <a href="https://twitter.com/Web3Kemal" target="_blank" rel="noopener noreferrer">@Web3Kemal</a>
+        Built with 💙 by <a href="https://twitter.com/Web3Kemal" target="_blank" rel="noopener noreferrer">@Web3Kemal</a>
       </div>
     </div>
   );
