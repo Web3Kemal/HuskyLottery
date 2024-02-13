@@ -1,5 +1,5 @@
 .wrapper {
-    background: linear-gradient(90deg, green, rgb(19, 20, 22));
+    background: linear-gradient(90deg,  #037ADE,#03E5B7);
     min-height: 100px; 
     width: 95%; /* Full width for mobile, same as table's wrapper */
     margin: 0 auto;

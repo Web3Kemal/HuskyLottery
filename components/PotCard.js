@@ -12,11 +12,11 @@ const PotCard = () => {
         <span className={style.textAccent}>#{lotteryId ? lotteryId : '1'}</span>
       </div>
       <div className={style.pot}>
-        Pot 🍯: <span className={style.goldAccent}>{lotteryPot} BNB</span>
+        Lottery Pot 🍯: <span className={style.goldAccent}>{lotteryPot} BNB</span>
       </div>
       <div className={style.recentWinnerTitle}>🏆Last Winners🏆</div>
       {!lastWinner.length ? (
-        <div className={style.winner}>No winner yet</div>
+        <div className={`${style.winner} ${style.headingline}`}>No winner yet</div>
       ) : (
         lastWinner.length > 0 && (
           <div className={style.winner}>

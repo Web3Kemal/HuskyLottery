@@ -16,23 +16,16 @@ const Rules = () => {
         How To Play
       </div>
       <div className={style.rule}>
-        Enter the game with 0.1 BNB, you can enter multiple times! The winner gets all the BNB!
+        Get an entry for 0.1 BNB, you can enter multiple times. One winner per game and he gets 1.9 BNB, because 5% is burned each game!
       </div>
       <div className={style.rule}>
-        Wait for the random winner pick everyday at 1 PM UTC!
+        The daily winner will be chosen randomly by the smart contract. Since each entry is added to a fixed 20-spots array, each entry from the same person - even with different addresses - statistically increases the chances to win. 
       </div>
       <div className={style.rule}>
-        For the winner there is a 5% tax that will be used for buyback!
+        To play the game on mobile, you need to open the website from the internal browser of MetaMask, then you will be able to connect the wallet. Remember to be on BSC chain before connecting!
       </div>
       <div className={style.rule}>
-        To play the game if you are on mobile, you need to open the website from the internal browser of MetaMask, then you will be able to connect the wallet. Remember to be on BSC chain to connect!
-      </div>
-      
-      <div className={style.rule}>
-        CA: <button onClick={copyToClipboard}>0xb01d852Ad6F84a7E2065aFEC5D0e801DE0bFa0B9</button>
-      </div>
-      <div className={style.rule}>
-        Built with 💙 by <a href="https://twitter.com/Web3Kemal" target="_blank" rel="noopener noreferrer">@Web3Kemal</a>
+        For reference, you can chek the public contract code at this address: <button onClick={copyToClipboard}>0x8bc237fdade26044af12ab9d2685994048a639c3</button>
       </div>
     </div>
   );

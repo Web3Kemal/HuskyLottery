@@ -7,7 +7,7 @@
   margin: 20px auto; /* Reduce margin for mobile */
   overflow: hidden;
   flex-direction: column;
-  background: linear-gradient(270deg, green, rgb(19, 20, 22));
+  background: linear-gradient(270deg, #037ADE,#03E5B7);
   background-color: 100;
   box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75); /* Reduce shadow for mobile */
 }

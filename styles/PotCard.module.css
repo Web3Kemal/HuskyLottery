@@ -1,5 +1,5 @@
 .wrapper {
-  background: linear-gradient(90deg,  green, rgb(19, 20, 22));
+  background: linear-gradient(90deg,  #037ADE,#03E5B7);
   min-height: 200px;
   width: 100%;
   max-width: 800px; /* Limit the maximum width on large screens */
@@ -50,7 +50,7 @@
   border: 1px solid rgb(17, 112, 219);
 }
 
-.recentWinnerTitle, .winner {
+.recentWinnerTitle {
   font-size: 1.2rem;
   font-weight: bolder;
   color: #fff;
@@ -58,8 +58,48 @@
   margin-top: 10px;
 }
 
+.headingline {
+  /* ... */
+
+  /* set the color of the text to transparent */
+  color: transparent;
+
+  /* we need to clip the gradient background so that
+  so only the text bit will have the gradient background
+  (otherwise the entire rectangle the text is in would have it) */
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.winner {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.headingLineGradient {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.headingLineSecond > .headingLineGradient {
+  background-image: linear-gradient(to left, #38b2ac, #0bc5ea);
+}
+
 .textAccent {
-  color: rgb(17, 112, 219);
+  color: rgb(255, 204, 0);
 }
 
 .drawWinnerBtn {
