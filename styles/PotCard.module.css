@@ -73,10 +73,6 @@
   box-sizing: border-box;
 }
 
-.btnca,
-.btndevs {
-  width: 100%; /* Adjust the width to fill the container */
-}
 
 .btn {
   width: 50%;
