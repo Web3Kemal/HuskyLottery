@@ -2,6 +2,7 @@
     background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     min-height: 100px; 
     width: 95%; /* Full width for mobile, same as table's wrapper */
+    max-width: 100%;
     margin: 0 auto;
     border-radius: 2rem; /* Same as table's wrapper */
     box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75); /* Same as table's wrapper */
