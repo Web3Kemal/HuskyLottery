@@ -27,7 +27,7 @@ const Rules = () => {
         save your address as a lottery participant ID, the actual ID will be the position (index) when you entered the lottery, therefore suppose you bet 10 times of 20 available entries, you will have statistically 50% chances to win the final prize. If the array was going to save your address as entry ID,  
         if you bet 19 times with the same address and another guy bets 1 time only, you would statistically have 50% chances to win, not 95%.</i>
       </div>
-      <div className={style.rule}>
+      <div className={style.ruleca}>
         Here is the public and verified lottery smart contract: <button className={button.btnca} onClick={copyToClipboard}>0x8bc237fdade26044af12ab9d2685994048a639c3</button>
       </div>
       <button className={button.btndevs} onClick={() => window.location = 'mailto:devs@huskycoin.vip'}>Contact devs</button>
