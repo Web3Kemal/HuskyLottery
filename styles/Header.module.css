@@ -25,10 +25,10 @@
   /* gradient text starts here */
   background: linear-gradient(
         to right,
-        #7953cd 20%,
-        #00affa 30%,
-        #0190cd 70%,
-        #764ada 80%
+        #ff0000 20%,
+        #fa9200 30%,
+        #fff200 70%,
+        #ff0000 80%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -58,7 +58,7 @@
   font-size: 0.9rem; /* Reduced font size for mobile */
   cursor: pointer;
   border: 1px solid #ffffff;
-  background: linear-gradient(90deg, #02997b, #045DE9);
+  background: linear-gradient(90deg, #ffaa00, #ff0000);
   border-radius: 1.5rem;
   padding: 8px; /* Reduced padding for mobile */
   color: #ffffff;
