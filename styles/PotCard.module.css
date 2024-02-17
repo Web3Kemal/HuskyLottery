@@ -76,7 +76,6 @@
 .btnca,
 .btndevs {
   width: 100%; /* Adjust the width to fill the container */
-  max-width: 200px; /* Limit the maximum width if needed */
 }
 
 .btn {
