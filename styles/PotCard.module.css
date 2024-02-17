@@ -32,6 +32,48 @@
   color:rgb(0,0,128);
 }
 
+.btnca {
+  width: 50%;
+  display:contents;
+  justify-content: center;
+  place-self: center;
+  color: #000000;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btndevs {
+  width: 16%;
+  display: flex;
+  justify-content: center;
+  place-self: center;
+  color: #000000;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .btn {
   width: 50%;
   display: flex;

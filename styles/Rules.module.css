@@ -22,6 +22,8 @@
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
+
+  
   
   /* Larger devices */
   @media (min-width: 600px) {
@@ -41,4 +43,6 @@
       margin-bottom: 20px; /* larger margin for larger screens */
     }
   }
+
+  
   

@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '../styles/Rules.module.css';
+import button from '../styles/PotCard.module.css';
 
 const Rules = () => {
   const copyToClipboard = () => {
@@ -27,9 +28,13 @@ const Rules = () => {
         if you bet 19 times with the same address and another guy bets 1 time only, you would statistically have 50% chances to win, not 95%.</i>
       </div>
       <div className={style.rule}>
-        For reference, you can chek the public contract code at this address: <button onClick={copyToClipboard}>0x8bc237fdade26044af12ab9d2685994048a639c3</button>
+        Here is the public and verified lottery smart contract: <button className={button.btnca} onClick={copyToClipboard}>0x8bc237fdade26044af12ab9d2685994048a639c3</button>
       </div>
+      <button className={button.btndevs} onClick={() => window.location = 'mailto:devs@huskycoin.vip'}>Contact devs</button>
+      
     </div>
+    
+    
   );
 }
 

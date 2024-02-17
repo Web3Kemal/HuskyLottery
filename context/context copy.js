@@ -1,4 +1,4 @@
- import { createContext, useState, useEffect, useContext } from 'react'
+import { createContext, useState, useEffect, useContext } from 'react'
 import Web3 from 'web3'
 import createLotteryContract from '../utils/lottery'
 import createTokenContract from '../utils/token'
@@ -13,8 +13,8 @@ export const AppProvider = ({ children }) => {
   const [lotteryPlayers, setPlayers] = useState([])
   const [lastWinner, setLastWinner] = useState([])
   const [lotteryId, setLotteryId] = useState()
-  const [etherscanUrl, setEtherscanUrl] = useState()/* 
-  const [tokenContract, setTokenContract] = useState(web3.eth.contract([]).at('0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')) */
+  const [etherscanUrl, setEtherscanUrl] = useState()
+  const [tokenContract, setTokenContract] = useState(createTokenContract(web3))
 
   useEffect(() => {
     updateLottery()
@@ -46,15 +46,13 @@ export const AppProvider = ({ children }) => {
     }
     try {
       console.log('entering lottery');
-      const amountToSend = web3.utils.toWei('0.1', 'ether'); // 0.1 BNB
-      /* await tokenContract.methods.approve(lotteryContract._address, amountToApprove).send({
+      const amountToApprove = web3.utils.toWei('100000', 'ether'); // 100,000 tokens
+      await tokenContract.methods.approve(lotteryContract._address, amountToApprove).send({
         from: address
-      }); */
+      });
   
-      await web3.eth.sendTransaction({
+      await lotteryContract.methods.enter().send({
         from: address,
-        to: lotteryContract._address,
-        value: amountToSend,
         gas: 300000,
         gasPrice: null,
       });
@@ -135,5 +133,3 @@ export const AppProvider = ({ children }) => {
 export const useAppContext = () => {
   return useContext(appContext)
 }
-
-
