@@ -1,24 +1,45 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.15;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+/* 
+
+    )           (          )       )                    (         )  
+ ( /(           )\ )    ( /(    ( /(       (            )\ )   ( /(  
+ )\())     (   (()/(    )\())   )\())    ( )\      (   (()/(   )\()) 
+((_)\      )\   /(_)) |((_)\   ((_)\     )((_)     )\   /(_)) ((_)\  
+ _((_)  _ ((_) (_))   |_ ((_) __ ((_)   ((_)_   _ ((_) (_))    _((_) 
+| || | | | | | / __|  | |/ /  \ \ / /    | _ ) | | | | | _ \  | \| | 
+| __ | | |_| | \__ \    ' <    \ V /     | _ \ | |_| | |   /  | .` | 
+|_||_|  \___/  |___/   _|\_\    |_|      |___/  \___/  |_|_\  |_|\_| 
+                                                                     
+
+*/                  
+
+interface IERC20 {
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address to, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address from, address to, uint256 amount) external returns (bool);
+}
 
 contract Lottery {
     address public owner;
-    address payable public marketing;  
+    address public burnAddress= 0x000000000000000000000000000000000000dEaD;  
     address payable[] public players;
     address[] public winners;
     uint public lotteryId;
-    uint public marketingTaxPercentage = 5; 
-    uint public maxPlayers = 50; 
+    uint public burnTaxPercentage = 5; 
+    uint public maxPlayers = 20; 
     IERC20 public token;
 
-    uint256 public ENTRY_FEE = 100000 * 10**18; // Consider the decimal places of the token
+    uint256 public ENTRY_FEE = 5000 * 10**18; // Entry amount * 18 decimals
 
-    constructor(address payable _marketing, address _tokenAddress) {
+    constructor(address _tokenAddress) {
         owner = msg.sender;
-        marketing = _marketing;
         lotteryId = 0;
         token = IERC20(_tokenAddress);
     }
@@ -56,8 +77,8 @@ contract Lottery {
         require(players.length > 0, "No players in the lottery");
         uint randomIndex = getRandomNumber() % players.length;
         
-        uint marketingTax = (getBalance() * marketingTaxPercentage) / 100;
-        token.transfer(marketing, marketingTax);
+        uint burnTax = (getBalance() * burnTaxPercentage) / 100;
+        token.transfer(burnAddress, burnTax);
 
         uint winnerAmount = getBalance();
         token.transfer(players[randomIndex], winnerAmount);

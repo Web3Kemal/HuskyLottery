@@ -1,5 +1,5 @@
 .wrapper {
-    background: linear-gradient(90deg,  #037ADE,#03E5B7);
+    background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     min-height: 100px; 
     width: 95%; /* Full width for mobile, same as table's wrapper */
     margin: 0 auto;
@@ -9,7 +9,7 @@
     padding: 10px; /* Increased padding to match table's wrapper */
     flex-direction: column;
     margin-top: 20px; /* Same as table's wrapper */
-    color: #fff; /* added for white text color */
+    color: #000000; /* added for black text color */
     text-align: center; /* added for center alignment */
   }
   

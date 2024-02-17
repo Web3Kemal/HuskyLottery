@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* gradient text starts here */
   background: linear-gradient(
         to right,
         #7953cd 20%,
@@ -44,6 +45,7 @@
       background-position: 100% 50%;
   }
 }
+/* gradient text ends here */
 
 /* In your Header.module.css */
 .connectBtnWrapper {

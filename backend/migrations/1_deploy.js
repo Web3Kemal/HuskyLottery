@@ -1,4 +1,4 @@
-const Lottery = artifacts.require('Lottery')
+const Lottery = artifacts.require('HuskyLottery')
 
 module.exports = function (deployer) {
   deployer.deploy(Lottery)

@@ -24,8 +24,8 @@ const PotCard = () => {
           </div>
         )
       )}
-      <div className={style.btn} onClick={enterLottery}>
-        Enter With 0.1 BNB!
+      <div className={`${style.btn} ${style.btnhover} ${style.gradientbtn}`} onClick={enterLottery}>
+        Enter With 0.1 BNB
       </div>
     </div>
   )
