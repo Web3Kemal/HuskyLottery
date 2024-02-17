@@ -29,7 +29,7 @@
 }
 
 .goldAccent {
-  color:rgb(0,0,128);
+  color:rgb(255, 0, 0);
 }
 
 .btnca {
@@ -80,7 +80,7 @@
   justify-content: center;
   place-self: center;
   color: #ffffff;
-  padding: 16px 20px;
+  padding: 16px 16px;
   text-align: center;
   text-decoration: none;
   margin-top: 10px;
@@ -184,7 +184,7 @@
 }
 
 .textAccent {
-  color: rgb(0,0,128);
+  color: rgb(255, 0, 0);
 }
 
 .drawWinnerBtn {

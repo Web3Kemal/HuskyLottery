@@ -25,7 +25,7 @@ const PotCard = () => {
         )
       )}
       <div className={`${style.btn} ${style.btnhover} ${style.gradientbtn}`} onClick={enterLottery}>
-        Enter With XXXXX HUSKY
+        Enter With XXX HUSKY
       </div>
     </div>
   )

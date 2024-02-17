@@ -68,9 +68,10 @@
 .welcome {
   font-size: 0.9rem; /* Reduced font size for mobile */
   font-weight: bolder;
+  margin-left: 10px;
 }
 
 .accentColor {
-  color: #f2505e;
+  color: #ffffff;
   font-weight: bold;
 }
