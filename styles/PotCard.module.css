@@ -1,7 +1,7 @@
 .wrapper {
   background:linear-gradient(to right,  #07eb97,#09c8e6,#0091ff, #00ff88 );
   min-height: 200px;
-  width: 50%;
+  width: 95%;
   max-width: 800px; /* Limit the maximum width on large screens */
   margin: 0 auto;
   border-radius: 2rem 0rem 2rem 0rem;
