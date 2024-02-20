@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <div className={style.wrapper}>
-      <div className={`${style.title} ${style.titleContainer}`}>Husky Lottery</div>
+      <div className={`${style.title} ${style.titleContainer}`}>HUSKY LOTTERY</div>
       {!address ? (
         <div className={style.connectBtnWrapper}>
           <WalletConnectBtn connectWallet={connectWallet} />

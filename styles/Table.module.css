@@ -1,72 +1,91 @@
+/* Table.module.css */
+
 .wrapper {
-  width: 95%; /* Full width for mobile */
+  width: 95%;
   display: flex;
-  margin-top: 20px; /* Reduce margin for mobile */
+  margin-top: 20px;
   align-items: center;
-  border-radius: 2rem;
-  margin: 20px auto; /* Reduce margin for mobile */
+  border-radius: 2rem 0rem 2rem 0rem;
+  margin: 20px auto;
   overflow: hidden;
   flex-direction: column;
-  background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background: linear-gradient(to right, #09c8e6, #07eb97, #00ff88, #0091ff);
   background-color: 100;
-  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75); /* Reduce shadow for mobile */
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75);
 }
 
 .tableHeader {
   width: 100%;
-  height: 60px; /* Reduce height for mobile */
+  height: 60px;
   color: #000000;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 5px 20px; /* Reduce padding for mobile */
+  padding: 5px 20px;
   border-bottom: 1px solid #31353e;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .rows {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Reduce gap for mobile */
+  gap: 20px;
   color: rgb(0, 0, 0);
 }
 
-.amountTitle, .addressTitle, .noPlayers {
-  font-size: 1rem; /* Reduce font size for mobile */
+.amountTitle,
+.addressTitle,
+.noPlayers {
+  font-size: 1rem;
   font-weight: bolder;
+  width: 100%;
+}
+
+.amountTitle {
+  text-align: right;
+}
+
+.addressTitle {
+  text-align: left;
 }
 
 .noPlayers {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px; /* Reduce padding for mobile */
+  padding: 15px;
 }
 
 /* Larger devices */
 @media (min-width: 600px) {
   .wrapper {
-    width: 80%; /* 80% for larger screens */
-    max-width: 50%; /* 50% for larger screens */
-    margin-top: 50px; /* larger margin for larger screens */
-    margin: 50px auto; /* larger margin for larger screens */
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); /* larger box shadow for larger screens */
+    width: 80%;
+    max-width: 50%;
+    margin-top: 50px;
+    margin: 50px auto;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   }
 
   .tableHeader {
-    height: 100px; /* larger height for larger screens */
-    padding: 10px 40px; /* larger padding for larger screens */
+    height: 100px;
+    padding: 10px 40px;
   }
 
   .rows {
-    gap: 40px; /* larger gap for larger screens */
+    gap: 40px;
   }
 
-  .amountTitle, .addressTitle, .noPlayers {
-    font-size: 1.3rem; /* larger font size for larger screens */
+  .amountTitle,
+  .addressTitle,
+  .noPlayers {
+    font-size: 1.3rem;
+    width: auto;
   }
 
   .noPlayers {
-    padding: 30px; /* larger padding for larger screens */
+    padding: 30px;
   }
 }

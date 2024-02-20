@@ -1,10 +1,10 @@
 .wrapper {
-    background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    background:linear-gradient(to right, #09c8e6, #07eb97, #00ff88, #0091ff);
     min-height: 100px; 
     width: 95%; /* Full width for mobile, same as table's wrapper */
     max-width: 100%;
     margin: 0 auto;
-    border-radius: 2rem; /* Same as table's wrapper */
+    border-radius:  2rem 0rem 2rem 0rem; /* Same as table's wrapper */
     box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75); /* Same as table's wrapper */
     display: flex;
     padding: 10px; /* Increased padding to match table's wrapper */
@@ -12,11 +12,15 @@
     margin-top: 20px; /* Same as table's wrapper */
     color: #000000; /* added for black text color */
     text-align: center; /* added for center alignment */
+    
   }
   
   .title {
     font-size: 1.5rem;
     font-weight: bolder;
+    font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
   }
   
   .rule {

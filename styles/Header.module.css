@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .wrapper {
   background: black;
   width: 100%;
   min-height: 50px;
-  color: #f1f1f3;
+  color: #ffffff;
   display: flex;
   align-items: center;
-  padding: 5px; /* Reduced padding for mobile */
+  padding: 0px; /* Reduced padding for mobile */
   justify-content: center;
-  position: sticky;
+  position:sticky;
   top: 0;
   left: 0;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .title {
-  margin-left: 10px; /* Reduced margin for mobile */
+  margin-left: 0px; /* Reduced margin for mobile */
   font-size: 2.5rem; /* Reduced font size for mobile */
   cursor: pointer;
   font-weight: bolder;
@@ -21,14 +26,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
   text-align: center;
   /* gradient text starts here */
   background: linear-gradient(
-        to right,
-        #ff0000 20%,
-        #fa9200 30%,
-        #fff200 70%,
-        #ff0000 80%
+    to right, #09c8e6, #07eb97, #00ff88, #0091ff
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -58,10 +60,10 @@
   font-size: 0.9rem; /* Reduced font size for mobile */
   cursor: pointer;
   border: 1px solid #ffffff;
-  background: linear-gradient(90deg, #ffaa00, #ff0000);
+  background: linear-gradient(to right, #09c8e6, #07eb97, #00ff88, #0091ff);
   border-radius: 1.5rem;
   padding: 8px; /* Reduced padding for mobile */
-  color: #ffffff;
+  color: #000000;
   font-weight: bolder;
 }
 
