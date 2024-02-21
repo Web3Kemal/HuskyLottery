@@ -226,18 +226,7 @@ export const lotteryAbi = [
 ];
 
 export const tokenAbi = [
-  {
-    inputs: [
-      { internalType: "string", name: "name_", type: "string" },
-      { internalType: "string", name: "symbol_", type: "string" },
-      { internalType: "uint8", name: "decimals_", type: "uint8" },
-      { internalType: "uint256", name: "totalSupply_", type: "uint256" },
-      { internalType: "address", name: "serviceFeeReceiver_", type: "address" },
-      { internalType: "uint256", name: "serviceFee_", type: "uint256" },
-    ],
-    stateMutability: "payable",
-    type: "constructor",
-  },
+  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   {
     anonymous: false,
     inputs: [
@@ -267,6 +256,59 @@ export const tokenAbi = [
     anonymous: false,
     inputs: [
       {
+        indexed: false,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      { indexed: false, internalType: "bool", name: "status", type: "bool" },
+    ],
+    name: "AutomaticMarketMakerPairUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "TaxFees",
+        type: "uint256",
+      },
+    ],
+    name: "BuyingTaxFeeUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "updatedMaxWalletHoldingAmount",
+        type: "uint256",
+      },
+    ],
+    name: "MaxWalletHoldingAmountUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "minTokensBeforeSwap",
+        type: "uint256",
+      },
+    ],
+    name: "MinTokensBeforeSwapUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
         indexed: true,
         internalType: "address",
         name: "previousOwner",
@@ -286,31 +328,59 @@ export const tokenAbi = [
     anonymous: false,
     inputs: [
       {
-        indexed: true,
-        internalType: "address",
-        name: "owner",
-        type: "address",
+        indexed: false,
+        internalType: "uint256",
+        name: "TaxFees",
+        type: "uint256",
       },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "token",
-        type: "address",
-      },
+    ],
+    name: "SellingTaxFeeUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
       {
         indexed: false,
-        internalType: "enum TokenType",
-        name: "tokenType",
-        type: "uint8",
+        internalType: "uint256",
+        name: "tokensSwapped",
+        type: "uint256",
       },
       {
         indexed: false,
         internalType: "uint256",
-        name: "version",
+        name: "ETHReceived",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokensIntoLiqudity",
         type: "uint256",
       },
     ],
-    name: "TokenCreated",
+    name: "SwapAndLiquify",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: false, internalType: "bool", name: "enabled", type: "bool" },
+    ],
+    name: "SwapAndLiquifyEnabledUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "TaxFees",
+        type: "uint256",
+      },
+    ],
+    name: "TaxFeeUpdated",
     type: "event",
   },
   {
@@ -329,16 +399,57 @@ export const tokenAbi = [
     type: "event",
   },
   {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "newstakingWallet",
+        type: "address",
+      },
+    ],
+    name: "stakingWalletUpdated",
+    type: "event",
+  },
+  {
     inputs: [],
-    name: "VERSION",
+    name: "_buyingStakingFee",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_decimals",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_maxWalletHoldingLimit",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_sellingStakingFee",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_totalSupply",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "address", name: "spender", type: "address" },
+      { internalType: "address", name: "allownceOwner", type: "address" },
+      { internalType: "address", name: "spenderAllowance", type: "address" },
     ],
     name: "allowance",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
@@ -364,14 +475,25 @@ export const tokenAbi = [
   },
   {
     inputs: [],
-    name: "decimals",
-    outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
+    name: "deadWalletAddress",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
+    inputs: [],
+    name: "decimals",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
     inputs: [
-      { internalType: "address", name: "spender", type: "address" },
+      {
+        internalType: "address",
+        name: "decreaseAllowancerAddress",
+        type: "address",
+      },
       { internalType: "uint256", name: "subtractedValue", type: "uint256" },
     ],
     name: "decreaseAllowance",
@@ -380,8 +502,40 @@ export const tokenAbi = [
     type: "function",
   },
   {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "excludeFromFee",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "excludeFromMaxWalletHoldingLimit",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "includeInFee",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "includeInMaxWalletHoldingLimit",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [
-      { internalType: "address", name: "spender", type: "address" },
+      {
+        internalType: "address",
+        name: "increaseAllowancerAddress",
+        type: "address",
+      },
       { internalType: "uint256", name: "addedValue", type: "uint256" },
     ],
     name: "increaseAllowance",
@@ -390,10 +544,24 @@ export const tokenAbi = [
     type: "function",
   },
   {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "isAutomaticMarketMaker",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "add", type: "address" }],
+    name: "isExcludedFromTax",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "name",
     outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
+    stateMutability: "pure",
     type: "function",
   },
   {
@@ -411,17 +579,48 @@ export const tokenAbi = [
     type: "function",
   },
   {
+    inputs: [
+      { internalType: "address", name: "addNewAMM", type: "address" },
+      { internalType: "bool", name: "status", type: "bool" },
+    ],
+    name: "setNewLiquidityPair",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "bool", name: "_enabled", type: "bool" }],
+    name: "setSwapAndLiquifyEnabled",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "stakingWalletAddress",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "swapAndLiquifyEnabled",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "symbol",
     outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
+    stateMutability: "pure",
     type: "function",
   },
   {
     inputs: [],
     name: "totalSupply",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
+    stateMutability: "pure",
     type: "function",
   },
   {
@@ -452,7 +651,71 @@ export const tokenAbi = [
     stateMutability: "nonpayable",
     type: "function",
   },
+  {
+    inputs: [],
+    name: "uniswapV2Pair",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "uniswapV2Router",
+    outputs: [
+      {
+        internalType: "contract IUniswapV2Router02",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "newstakingBuyingFee", type: "uint256" },
+    ],
+    name: "updateBuyingTaxFees",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "maxWalletHoldingAmount",
+        type: "uint256",
+      },
+    ],
+    name: "updateMaxWalletHoldingLimit",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "newstakingSellFee", type: "uint256" },
+    ],
+    name: "updateSellingTaxFees",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable",
+        name: "newstakingWallet",
+        type: "address",
+      },
+    ],
+    name: "updateWallets",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
 export const LotteryAddress = "0x212342a52B00c8C0EBFCd00534069B58Fa6fbF7C";
-export const tokenAddress = "0x3a36dc12eFaa14a3F692B94f97450594459661b6";
+export const tokenAddress = "0xa469B76BeFf46BD4af84fE845272b085678aB4Fb";
