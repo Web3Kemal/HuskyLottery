@@ -1,4 +1,4 @@
-export const lotteryAbi = [
+export const lotteryAbi = [/* 
   {
     inputs: [],
     name: "enter",
@@ -223,7 +223,7 @@ export const lotteryAbi = [
     stateMutability: "view",
     type: "function",
   },
-];
+ */];
 
 export const tokenAbi = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
@@ -717,5 +717,5 @@ export const tokenAbi = [
   },
 ];
 
-export const LotteryAddress = "0x212342a52B00c8C0EBFCd00534069B58Fa6fbF7C";
+export const LotteryAddress = "";
 export const tokenAddress = "0xa469B76BeFf46BD4af84fE845272b085678aB4Fb";

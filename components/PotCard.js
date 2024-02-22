@@ -12,7 +12,7 @@ const PotCard = () => {
         <span className={style.textAccent}>#{lotteryId ? lotteryId : '1'}</span>
       </div>
       <div className={style.pot}>
-        Lottery Pot 🍯: <span className={style.goldAccent}>{lotteryPot} BNB</span>
+        Lottery Pot 🍯: <span className={style.goldAccent}>{lotteryPot} HUSKY</span>
       </div>
       <div className={style.recentWinnerTitle}>🏆Last Winners🏆</div>
       {!lastWinner.length ? (
@@ -25,7 +25,7 @@ const PotCard = () => {
         )
       )}
       <div className={`${style.btn} ${style.btnhover} ${style.gradientbtn}`} onClick={enterLottery}>
-        Enter With XXX HUSKY
+        Enter With 69 HUSKY
       </div>
     </div>
   )
