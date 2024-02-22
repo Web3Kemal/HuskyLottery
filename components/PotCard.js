@@ -25,7 +25,7 @@ const PotCard = () => {
         )
       )}
       <div className={`${style.btn} ${style.btnhover} ${style.gradientbtn}`} onClick={enterLottery}>
-        Enter With 69 HUSKY
+        Play right after launch!
       </div>
     </div>
   )
